@@ -239,7 +239,7 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 					if ( show2 == '-' ) {	// �ƧǤ覡�� ����
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i < walk ; i++ )
-							tempS[i] = temp[walk + head - i - 1]
+							tempS[i] = temp[walk + head - i - 1];
 					}	// if
 					
 					head = walk;
