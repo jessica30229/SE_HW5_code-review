@@ -136,7 +136,7 @@ void WriteTimeRecords( string fileName, string fname, float readTime, float runT
  	
  	outFile << "Ū�ɮɶ��G" << readTime << "seconds" << endl;
 	outFile << "�ƧǮɶ��G" << runTime << "seconds" << endl;
-	outFile << "�g�ɮɶ��G" << writeTime << "seconds" << endl;
+	// outFile << "�g�ɮɶ��G" << writeTime << "seconds" << endl;
 	outFile.close();
 } // WriteTimeRecords()
 //**********************************************************************************/
