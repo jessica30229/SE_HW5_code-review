@@ -6,7 +6,7 @@
 #include <iomanip> // setw
 #include <ctime> // clock, CLOCKS_PER_SEC
 #include<algorithm> // swap
-#define PAGE_SIZE 30 // number of output per page
+// #define PAGE_SIZE 30 // number of output per page
 using namespace std; // standard naming space
 typedef struct cT { 
 	string cname; 	// college name
