@@ -94,7 +94,8 @@ bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {
  	if ( !cSet.size() ){
 		std::cout << endl << "### Get nothing from the file " << fileName << " ! ### " << endl;
 		return false;
-	 }		
+	 }
+	return true;
 } // end readRecords
 
 
