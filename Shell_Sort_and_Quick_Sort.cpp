@@ -17,11 +17,11 @@ typedef struct cT {
 
 //test
 
-bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
-void displayAll(vector<collegeType> &); 									// output all on screen
-void writeRecords(vector<collegeType> &, string fname, string fileName ); 		// output all into a file
-void shellSort(vector<collegeType> &, string fileName, float rTime ); 		// shell sort
-void quickSort(vector<collegeType> &, string fileName, float rTime ); 		// quick sort
+bool readRecords(vector<collegeType> & tempS, string & fileName, float & rTime ); // read records from a file
+void displayAll(vector<collegeType> & tempS); 									// output all on screen
+void writeRecords(vector<collegeType> & tempS, string fname, string fileName ); 		// output all into a file
+void shellSort(vector<collegeType> & tempS, string fileName, float rTime ); 		// shell sort
+void quickSort(vector<collegeType> & tempS, string fileName, float rTime ); 		// quick sort
 void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int choice );
 void WriteTimeRecords( string fileName, string fname, float readTime, float runTime, float writeTime );
 
