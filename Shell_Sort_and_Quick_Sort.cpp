@@ -18,7 +18,7 @@ typedef struct cT {
 
 bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
 void displayAll(vector<collegeType> &); 									// output all on screen
-void writeRecords(vector<collegeType> &, string, string fileName ); 		// output all into a file
+void writeRecords(vector<collegeType> &, string fname, string fileName ); 		// output all into a file
 void shellSort(vector<collegeType> &, string fileName, float rTime ); 		// shell sort
 void quickSort(vector<collegeType> &, string fileName, float rTime ); 		// quick sort
 void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int choice );
@@ -29,7 +29,7 @@ int main(void) {
 	float rTime = 0.0;
 	vector<collegeType> cSet; 				// set of output records
 	readRecords( cSet, fileName, rTime ); 	// call: read records from a file
-	displayAll(cSet); 						// call: output all on screen
+	displayAll( cSet ); 						// call: output all on screen
 	shellSort( cSet, fileName, rTime ); 	// call: shell sort
 	quickSort( cSet, fileName, rTime ); 	// call: quick sort
 	system("pause");
