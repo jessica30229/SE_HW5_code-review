@@ -82,7 +82,7 @@ bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {
  		} //end outer-while
  	}	// else
  	
- 	timer = clock();						// start the timer
+ 	// timer = clock();						// start the timer
  	timer = clock() - timer; 	// get the elapse time
  	std::cout << endl << "Ū�ɮɶ��G" << timer << " clocks (";
  	std::cout << ( (float)timer ) / CLOCKS_PER_SEC << " seconds)." << endl;
