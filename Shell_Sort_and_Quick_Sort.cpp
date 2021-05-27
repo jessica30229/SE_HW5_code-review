@@ -99,7 +99,7 @@ void displayAll(vector<collegeType> &cSet) { 	// output all on screen
  	for (vector<collegeType>::iterator it = cSet.begin(); it < cSet.end(); ++it) {
   		cout << "(" << setw(2) << ++j << ") " << setw(10) << it->cname << setw(30)
 			 << it->dname;
- 		cout << setw(8) << it->level  setw(6) << it->total << " students" << endl;
+ 		cout << setw(8) << it->level << setw(6) << it->total << " students" << endl;
  	} // end for
 } // end displayAll
 
