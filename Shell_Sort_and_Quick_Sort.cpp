@@ -15,6 +15,7 @@ typedef struct cT {
 } collegeType;
 
 // test
+// fang is smart
 
 bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
 void displayAll(vector<collegeType> &); 									// output all on screen
