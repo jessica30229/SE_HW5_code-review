@@ -186,7 +186,7 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 		for ( int i = 0; i < tempS.size(); i++ )
 			tempS[i] = temp[tempS.size() - i - 1];
 		// if
- 	
+	}
  	timer = clock() - timer; 	// get the elapse time
  	std::cout << endl << "[1] Shell Sort: " << timer << " clocks (";	
 	std::cout << ((float)timer) / CLOCKS_PER_SEC << " seconds)." << endl;
