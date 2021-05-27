@@ -160,7 +160,7 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	for ( gap = len >> 1; gap > 0; gap >>= 1 ) {
 		for (i = gap; i < len; i++) {
 			temp = tempS[i];
-			if ( choice = 1 ) {	
+			if ( choice == 1 ) {	
 				for (j = i - gap; j >= 0 && tempS[j].cname > temp.cname; j -= gap)
 					tempS[j + gap] = tempS[j];
 			}	// if
