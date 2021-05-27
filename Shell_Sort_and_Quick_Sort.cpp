@@ -5,6 +5,7 @@
 #include <cstdlib> // atoi, system
 #include <iomanip> // setw
 #include <ctime> // clock, CLOCKS_PER_SEC
+#include<algorithm> // swap
 #define PAGE_SIZE 30 // number of output per page
 using namespace std; // standard naming space
 typedef struct cT { 
@@ -349,54 +350,54 @@ void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int ch
 				left++;
 			while ( tempS[right].cname >= mid.cname && left < right ) 
 				right--;
-			std::swap( tempS[left], tempS[right] ); 	
+			swap( tempS[left], tempS[right] ); 	
 		}	// if
 		else if ( choice == 2 ) {	// �ƨt�W  
 			while ( tempS[left].dname < mid.dname && left < right ) 
 				left++;
 			while ( tempS[right].dname >= mid.dname && left < right ) 
 				right--;
-			std::swap( tempS[left], tempS[right] );			
+			swap( tempS[left], tempS[right] );			
 		}	// else if
 		else if ( choice == 3 ) {	// �Ʀ~��  
 			while ( tempS[left].level < mid.level && left < right ) 
 				;left++;
 			while ( tempS[right].level >= mid.level && left < right ) 
 				right--;
-			std::swap( tempS[left], tempS[right] );			
+			swap( tempS[left], tempS[right] );			
 		}	// else if
 		else if ( choice == 4 ) {	// �ƤH�� 
 			while ( tempS[left].total < mid.total && left < right ) 
 				left++;
 			while ( tempS[right].total >= mid.total && left < right ) 
 				right--;
-			std::swap( tempS[left], tempS[right] ); 		
+			swap( tempS[left], tempS[right] ); 		
 		}	// else if		
 		
-		std::swap( tempS[left], tempS[left] );
+		swap( tempS[left], tempS[left] );
 	}	// while
 	
 	if ( choice == 1 ) {	// �Ƥj�ǦW��  
 		if ( tempS[left].cname >= tempS[end].cname )
-			std::swap( tempS[left], tempS[end] );
+			swap( tempS[left], tempS[end] );
 		else
 			left++;
 	}	// if
 	else if ( choice == 2 ) {	// �ƨt�W 
 		if ( tempS[left].dname >= tempS[end].dname )
-			std::swap( tempS[left], tempS[end] );
+			swap( tempS[left], tempS[end] );
 		else
 			left++;
 	}	// else if
 	else if ( choice == 3 ) {	// �Ʀ~�� 
 		if ( tempS[left].level >= tempS[end].level )
-			std::swap( tempS[left], tempS[end] ); 
+			swap( tempS[left], tempS[end] ); 
 		else
 			left++;
 	}	// else if
 	else if ( choice == 4 ) {	// �ƤH�� 
 		if ( tempS[left].total >= tempS[end].total )
-			std::swap( tempS[left], tempS[end] ); 
+			swap( tempS[left], tempS[end] ); 
 		else
 			left++;	
 	}	// else if
