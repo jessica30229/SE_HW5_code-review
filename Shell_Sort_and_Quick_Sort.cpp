@@ -129,7 +129,7 @@ void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { 
  	outFile.close(); 	// close output file
 } // end writeRecords
 
-void WriteTimeRecords( string fileName, string fname, float readTime, float runTime ) {
+void WriteTimeRecords( string fileName, string fname, float readTime, float runTime, float writeTime ) {
  	int j = 0;
  	fstream outFile; 							// output file handle
  	fname = fileName + fname + "����ɶ�.txt"; 	// output file name
@@ -141,7 +141,7 @@ void WriteTimeRecords( string fileName, string fname, float readTime, float runT
  	
  	outFile << "Ū�ɮɶ��G" << readTime << "seconds" << endl;
 	outFile << "�ƧǮɶ��G" << runTime << "seconds" << endl;
-	// outFile << "�g�ɮɶ��G" << writeTime << "seconds" << endl;
+	outFile << "�g�ɮɶ��G" << writeTime << "seconds" << endl;
 	outFile.close();
 } // WriteTimeRecords()
 //**********************************************************************************/
