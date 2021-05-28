@@ -357,8 +357,8 @@ void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int ch
 		}	// else if
 		else if ( choice == 3 ) {	// ??~??  
 			while ( tempS[left].level < mid.level && left < right ) 
-				;left++;
-			while ( tempS[right].level >= mid.level && left < right ) 
+				left++;
+			while ( tempS[right].level >= mid.level && left < right )
 				right--;
 			std::swap( tempS[left], tempS[right] );			
 		}	// else if
