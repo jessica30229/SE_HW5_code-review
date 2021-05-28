@@ -14,7 +14,7 @@ typedef struct cT {
 	int total; 		// total number of students
 } collegeType;
 
-bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
+void readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
 void displayAll(vector<collegeType> &); 									// output all on screen
 void writeRecords(vector<collegeType> &, string fname, string fileName ); 		// output all into a file
 void shellSort(vector<collegeType> &, string fileName, float rTime ); 		// shell sort
@@ -35,7 +35,7 @@ int main(void) {
 } // end main
 //*********************************************************************************/
 
-bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {   // read records from a file
+void readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {   // read records from a file
 	clock_t timer;
 	cout << "?????W(601~605)?G";
 	cin >> fileName;
