@@ -16,7 +16,7 @@ typedef struct cT {
 
 bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
 void displayAll(vector<collegeType> &); 									// output all on screen
-void writeRecords(vector<collegeType> &, string, string fileName, float & rTime ); 		// output all into a file
+void writeRecords(vector<collegeType> &, string, string fileName ); 		// output all into a file
 void shellSort(vector<collegeType> &, string fileName, float rTime ); 		// shell sort
 void quickSort(vector<collegeType> &, string fileName, float rTime ); 		// quick sort
 void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int choice );
@@ -102,12 +102,10 @@ void displayAll(vector<collegeType> &cSet) { 	// output all on screen
 } // end displayAll
 
 
-void writeRecords( vector<collegeType> &aSet, string fname, string fileName, float & rTime ) { // output all into a file
+void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { // output all into a file
  	int j = 0;
  	fstream outFile; 								// output file handle
  	fname = "output" + fileName + fname + ".txt"; 	// output file name
- 	clock_t timer;
-	timer = clock();
 	outFile.open(fname.c_str(), fstream::out); 		// create a new file to write
  	if (!outFile.is_open()) { 						// unable to create a file
  		cout << endl << "### Cannot create " << fname << " ! ###" << endl;
@@ -119,11 +117,6 @@ void writeRecords( vector<collegeType> &aSet, string fname, string fileName, flo
 				<<	it->dname;
  		outFile << "\t" << it->level << "\t1234567" << it->total << endl;
  	} // end for
- 	timer = clock();						// start the timer
- 	timer = clock() - timer; 	// get the elapse time
- 	cout << endl << "?g?????G" << timer << " clocks (";
- 	cout << ( (float)timer ) / CLOCKS_PER_SEC << " seconds)." << endl;
- 	rTime = ( (float)timer ) / CLOCKS_PER_SEC ;
  	outFile.close(); 	// close output file
 } // end writeRecords
 
@@ -163,7 +156,7 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	for ( gap = len >> 1; gap > 0; gap >>= 1 ) {
 		for (i = gap; i < len; i++) {
 			temp = tempS[i];
-			if ( choice = 1 ) {	
+			if ( choice == 1 ) {	
 				for (j = i - gap; j >= 0 && tempS[j].cname > temp.cname; j -= gap)
 					tempS[j + gap] = tempS[j];
 			}	// if
