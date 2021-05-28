@@ -212,12 +212,12 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
  	timer = clock(); 	// start the timer	
  	
 	QuickSortRecursive( tempS, 0, tempS.size() - 1, choice1 );	// ??@???q??? 
-	if ( show1 == '-' )	// ????D?? ????
+	if ( show1 == '-' )	{// ????D?? ????
 		vector<collegeType> temp(tempS);
 		for ( int i = 0; i < tempS.size(); i++ )
 			tempS[i] = tempS[tempS.size() - i - 1];
 		// if
-	
+	}
 	if ( choice2 == choice1 ) {		// ?n?????????O?@??? ( EX?G?H?? ?H?? ) 
 		if ( ( show1 == '-' && show2 == '+' ) || (show1 == '+' && show2 == '-' ) ) {	
 			// ??????D???P?? ( ??J?G1 + 1 - ) 
