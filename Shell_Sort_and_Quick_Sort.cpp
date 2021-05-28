@@ -14,9 +14,6 @@ typedef struct cT {
 	int total; 		// total number of students
 } collegeType;
 
-// test
-// fang is smart
-
 bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
 void displayAll(vector<collegeType> &); 									// output all on screen
 void writeRecords(vector<collegeType> &, string, string fileName ); 		// output all into a file
@@ -40,7 +37,7 @@ int main(void) {
 
 bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {   // read records from a file
 	clock_t timer;
-	cout << "����ɦW(601~605)�G";
+	cout << "?????W(601~605)?G";
 	cin >> fileName;
 	fstream inFile; 						// input file handle
 	string temp = fileName;
@@ -84,7 +81,7 @@ bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {
  	
  	timer = clock();						// start the timer
  	timer = clock() - timer; 	// get the elapse time
- 	cout << endl << "Ū�ɮɶ��G" << timer << " clocks (";
+ 	cout << endl << "??????G" << timer << " clocks (";
  	cout << ( (float)timer ) / CLOCKS_PER_SEC << " seconds)." << endl;
  	rTime = ( (float)timer ) / CLOCKS_PER_SEC ;
 	inFile.close(); // close file
@@ -100,7 +97,7 @@ void displayAll(vector<collegeType> &cSet) { 	// output all on screen
  	for (vector<collegeType>::iterator it = cSet.begin(); it < cSet.end(); ++it) {
   		cout << "(" << setw(2) << ++j << ") " << setw(10) << it->cname << setw(30)
 			 << it->dname;
- 		cout << setw(8) << it->level  setw(6) << it->total << " students" << endl;
+ 		cout << setw(8) << it->level << setw(6) << it->total << " students" << endl;
  	} // end for
 } // end displayAll
 
@@ -127,16 +124,16 @@ void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { 
 void WriteTimeRecords( string fileName, string fname, float readTime, float runTime ) {
  	int j = 0;
  	fstream outFile; 							// output file handle
- 	fname = fileName + fname + "����ɶ�.txt"; 	// output file name
+ 	fname = fileName + fname + "??????.txt"; 	// output file name
  	outFile.open(fname.c_str(), fstream::out); 	// create a new file to write
  	if (!outFile.is_open()) { 					// unable to create a file
  		cout << endl << "### Cannot create " << fname << " ! ###" << endl;
  		return;
  	} //end if
  	
- 	outFile << "Ū�ɮɶ��G" << readTime << "seconds" << endl;
-	outFile << "�ƧǮɶ��G" << runTime << "seconds" << endl;
-	outFile << "�g�ɮɶ��G" << writeTime << "seconds" << endl;
+ 	outFile << "??????G" << readTime << "seconds" << endl;
+	outFile << "??????G" << runTime << "seconds" << endl;
+	outFile << "?g?????G" << writeTime << "seconds" << endl;
 	outFile.close();
 } // WriteTimeRecords()
 //**********************************************************************************/
@@ -150,9 +147,9 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
  	char show = '\0';
  	int choice = 0;
  	cout << "======= Shell Sort =======\n";
- 	cout << "�п�ܱ��ƧǪ����(1~4)�G";
+ 	cout << "????????????(1~4)?G";
  	cin >> choice;
- 	cout << "�п�ܱƧǤ覡(���W+ ����-)�G";
+ 	cout << "???????D(???W+ ????-)?G";
  	cin >> show;
 	timer = clock(); // start the timer
 	int gap, i, j;
@@ -181,7 +178,7 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 		}	// for
 	}	// for	
 
-	if ( show == '-' ) {		// �ƧǤ覡�� ����
+	if ( show == '-' ) {		// ????D?? ????
 		vector<collegeType> temp(tempS);
 		for ( int i = 0; i < tempS.size(); i++ )
 			tempS[i] = temp[tempS.size() - i - 1];
@@ -194,7 +191,7 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	writeRecords(tempS, "shellSort", fileName ); 	// call: output all into a new file
 	
 	timer2 = clock() - timer2; // get the elapse time
- 	cout << "[1] �g�ɮɶ��G" << timer2 << " clocks (";
+ 	cout << "[1] ?g?????G" << timer2 << " clocks (";
  	cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
  	WriteTimeRecords( fileName, "shellSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / 0 );
 } // end shellSort
@@ -205,38 +202,38 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
  	int choice1 = 0, choice2 = 0;
  	char show1 = '\0', show2 = '\0';
  	cout << "======= Quick Sort =======\n";
- 	cout << "�п�ܲĤ@�����ƧǪ����(1~4)�G";
+ 	cout << "?????@???????????(1~4)?G";
  	cin >> choice1;
- 	cout << "�п�ܲĤ@�����ƧǤ覡(���W+ ����-)�G";
+ 	cout << "?????@????????D(???W+ ????-)?G";
  	cin >> show1;
- 	cout << "�п�ܲĤG�����ƧǪ����(1~4)�G";
+ 	cout << "?????G???????????(1~4)?G";
  	cin >> choice2;
- 	cout << "�п�ܲĤG�����ƧǤ覡(���W+ ����-)�G";
+ 	cout << "?????G????????D(???W+ ????-)?G";
  	cin >> show2;
  	timer = clock(); 	// start the timer	
  	
-	QuickSortRecursive( tempS, 0, tempS.size() - 1, choice1 );	// �Ĥ@���q�Ƨ� 
-	if ( show1 == '-' )	// �ƧǤ覡�� ����
+	QuickSortRecursive( tempS, 0, tempS.size() - 1, choice1 );	// ??@???q??? 
+	if ( show1 == '-' )	// ????D?? ????
 		vector<collegeType> temp(tempS);
 		for ( int i = 0; i < tempS.size(); i++ )
 			tempS[i] = temp[tempS.size() - i - 1];
 		// if
 	
-	if ( choice2 == choice1 ) {		// �n�ƪ�������O�@�˪� ( EX�G�H�� �H�� ) 
+	if ( choice2 == choice1 ) {		// ?n?????????O?@??? ( EX?G?H?? ?H?? ) 
 		if ( ( show1 == '-' && show2 == '+' ) || (show1 == '+' && show2 == '-' ) ) {	
-			// ���ƧǤ覡���P�� ( ��J�G1 + 1 - ) 
+			// ??????D???P?? ( ??J?G1 + 1 - ) 
 			vector<collegeType> temp(tempS);
 			for ( int i = 0; i < tempS.size(); i++ )
 				tempS[i] = temp[tempS.size() - i - 1];			
 		}	// if
 	}	// if
-	else {	// �ĤG���q�ƧǶ}�l 
+	else {	// ??G???q???}?l 
 		int head = 0;
-		if ( choice1 == 1 ) {	//  �u���Ƥj�ǦW�� 
+		if ( choice1 == 1 ) {	//  ?u????j??W?? 
 			for ( int walk = 0; walk < tempS.size(); walk++ ) {
 				if ( tempS[walk].cname != tempS[head].cname ) {					
-					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// �ĤG���q�Ƨ� 	
-					if ( show2 == '-' ) {	// �ƧǤ覡�� ����
+					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// ??G???q??? 	
+					if ( show2 == '-' ) {	// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i < walk ; i++ )
 							tempS[i] = temp[walk + head - i - 1]
@@ -245,9 +242,9 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 					head = walk;
 				}	// if
 				
-				if ( walk == tempS.size() - 1 ) {	// �ƨ�̫���קK�������X�j�� �S��̫�@�q�ƨ� 
-					QuickSortRecursive( tempS, head, walk, choice2 );	// �ĤG���q�Ƨ� 	
-					if ( show2 == '-' ) {	// �ƧǤ覡�� ����
+				if ( walk == tempS.size() - 1 ) {	// ????????K???????X?j?? ?S????@?q??? 
+					QuickSortRecursive( tempS, head, walk, choice2 );	// ??G???q??? 	
+					if ( show2 == '-' ) {	// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i <= walk ; i++ )
 							tempS[i] = temp[walk + head - i];
@@ -255,11 +252,11 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 				}	// if
 			}	// for			
 		}	// if
-		else if ( choice1 == 2 ) {	//  �u���ƨt�W 
+		else if ( choice1 == 2 ) {	//  ?u????t?W 
 			for ( int walk = 0; walk < tempS.size(); walk++ ) {
 				if ( tempS[walk].dname != tempS[head].dname ) {					
-					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// �ĤG���q�Ƨ� 
-					if ( show2 == '-' ) {									// �ƧǤ覡�� ����
+					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// ??G???q??? 
+					if ( show2 == '-' ) {									// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i < walk ; i++ )
 							tempS[i] = temp[walk + head - i - 1];
@@ -268,9 +265,9 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 					head = walk;
 				}	// if
 				
-				if ( walk == tempS.size() - 1 ) {	// �ƨ�̫���קK�������X�j�� �S��̫�@�q�ƨ� 
-					QuickSortRecursive( tempS, head, walk, choice2 );	// �ĤG���q�Ƨ� 	
-					if ( show2 == '-' ) {								// �ƧǤ覡�� ����
+				if ( walk == tempS.size() - 1 ) {	// ????????K???????X?j?? ?S????@?q??? 
+					QuickSortRecursive( tempS, head, walk, choice2 );	// ??G???q??? 	
+					if ( show2 == '-' ) {								// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i <= walk ; i++ )
 							tempS[i] = temp[walk + head - i];
@@ -278,11 +275,11 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 				}	// if
 			}	// for	
 		}	// else if
-		else if ( choice1 == 3 ) {	//  �u���Ʀ~��
+		else if ( choice1 == 3 ) {	//  ?u????~??
 			for ( int walk = 0; walk < tempS.size(); walk++ ) {
 				if ( tempS[walk].level != tempS[head].level ) {					
-					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// �ĤG���q�Ƨ� 
-					if ( show2 == '-' ) {									// �ƧǤ覡�� ����
+					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// ??G???q??? 
+					if ( show2 == '-' ) {									// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i < walk ; i++ )
 							tempS[i] = temp[walk + head - i - 1];
@@ -291,9 +288,9 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 					head = walk;
 				}	// if
 				
-				if ( walk == tempS.size() - 1 ) {	// �ƨ�̫���קK�������X�j�� �S��̫�@�q�ƨ� 
-					QuickSortRecursive( tempS, head, walk, choice2 );	// �ĤG���q�Ƨ� 	
-					if ( show2 == '-' ) {								// �ƧǤ覡�� ����
+				if ( walk == tempS.size() - 1 ) {	// ????????K???????X?j?? ?S????@?q??? 
+					QuickSortRecursive( tempS, head, walk, choice2 );	// ??G???q??? 	
+					if ( show2 == '-' ) {								// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i <= walk ; i++ )
 							tempS[i] = temp[walk + head - i];
@@ -301,11 +298,11 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 				}	// if
 			}	// for		
 		}	// else if
-		else if ( choice1 == 4 ) {	//  �u���ƤH�� 
+		else if ( choice1 == 4 ) {	//  ?u????H?? 
 			for ( int walk = 0; walk < tempS.size(); walk++ ) {
 				if ( tempS[walk].total != tempS[head].total ) {					
-					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// �ĤG���q�Ƨ� 	
-					if ( show2 == '-' ) {									// �ƧǤ覡�� ����
+					QuickSortRecursive( tempS, head, walk - 1, choice2 );	// ??G???q??? 	
+					if ( show2 == '-' ) {									// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i < walk ; )
 							tempS[i] = temp[walk + head - i - 1];
@@ -314,9 +311,9 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 					head = walk;
 				}	// if
 				
-				if ( walk == tempS.size() - 1 ) {	// �ƨ�̫���קK�������X�j�� �S��̫�@�q�ƨ� 
-					QuickSortRecursive( tempS, head, walk, choice2 );	// �ĤG���q�Ƨ� 
-					if ( show2 == '-' ) {								// �ƧǤ覡�� ����
+				if ( walk == tempS.size() - 1 ) {	// ????????K???????X?j?? ?S????@?q??? 
+					QuickSortRecursive( tempS, head, walk, choice2 );	// ??G???q??? 
+					if ( show2 == '-' ) {								// ????D?? ????
 						vector<collegeType> temp(tempS);
 						for ( int i = head; i <= walk ; i++ )
 							tempS[i] = temp[walk + head - i];
@@ -333,40 +330,40 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	writeRecords( tempS, "quickSort", fileName ); // call: output all into a new file
 	
 	timer2 = clock() - timer2; 	// get the elapse time
- 	cout << "[1] �g�ɮɶ��G" << timer2 << " clocks (";
+ 	cout << "[1] ?g?????G" << timer2 << " clocks (";
  	cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
  	WriteTimeRecords( fileName, "quickSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / CLOCKS_PER_SEC );
 } // end quickSort
 
 
 void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int choice ) {
-	if ( start >= end )		// �קK�ǦC���׬� 0 
+	if ( start >= end )		// ??K??C????? 0 
 		return false;
 	collegeType mid = tempS[end];	// pivot 
 	int left = start, right = end - 1;
 	while ( left < right ) {
-	 	if ( choice == 1 ) {	// �Ƥj�ǦW�� 
+	 	if ( choice == 1 ) {	// ??j??W?? 
 	 		while ( tempS[left].cname < mid.cname && left < right ) 
 				left++;
 			while ( tempS[right].cname >= mid.cname && left < right ) 
 				right--;
 			std::swap( tempS[left], tempS[right] ); 	
 		}	// if
-		else if ( choice == 2 ) {	// �ƨt�W  
+		else if ( choice == 2 ) {	// ??t?W  
 			while ( tempS[left].dname < mid.dname && left < right ) 
 				left++;
 			while ( tempS[right].dname >= mid.dname && left < right ) 
 				right--;
 			std::swap( tempS[left], tempS[right] );			
 		}	// else if
-		else if ( choice == 3 ) {	// �Ʀ~��  
+		else if ( choice == 3 ) {	// ??~??  
 			while ( tempS[left].level < mid.level && left < right ) 
 				;left++;
 			while ( tempS[right].level >= mid.level && left < right ) 
 				right--;
 			std::swap( tempS[left], tempS[right] );			
 		}	// else if
-		else if ( choice == 4 ) {	// �ƤH�� 
+		else if ( choice == 4 ) {	// ??H?? 
 			while ( tempS[left].total < mid.total && left < right ) 
 				left++;
 			while ( tempS[right].total >= mid.total && left < right ) 
@@ -377,25 +374,25 @@ void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int ch
 		std::swap( tempS[left], tempS[left] );
 	}	// while
 	
-	if ( choice == 1 ) {	// �Ƥj�ǦW��  
+	if ( choice == 1 ) {	// ??j??W??  
 		if ( tempS[left].cname >= tempS[end].cname )
 			std::swap( tempS[left], tempS[end] );
 		else
 			left++;
 	}	// if
-	else if ( choice == 2 ) {	// �ƨt�W 
+	else if ( choice == 2 ) {	// ??t?W 
 		if ( tempS[left].dname >= tempS[end].dname )
 			std::swap( tempS[left], tempS[end] );
 		else
 			left++;
 	}	// else if
-	else if ( choice == 3 ) {	// �Ʀ~�� 
+	else if ( choice == 3 ) {	// ??~?? 
 		if ( tempS[left].level >= tempS[end].level )
 			std::swap( tempS[left], tempS[end] ); 
 		else
 			left++;
 	}	// else if
-	else if ( choice == 4 ) {	// �ƤH�� 
+	else if ( choice == 4 ) {	// ??H?? 
 		if ( tempS[left].total >= tempS[end].total )
 			std::swap( tempS[left], tempS[end] ); 
 		else
