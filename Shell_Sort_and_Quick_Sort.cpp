@@ -215,7 +215,7 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	if ( show1 == '-' )	// ????D?? ????
 		vector<collegeType> temp(tempS);
 		for ( int i = 0; i < tempS.size(); i++ )
-			tempS[i] = temp[tempS.size() - i - 1];
+			tempS[i] = tempS[tempS.size() - i - 1];
 		// if
 	
 	if ( choice2 == choice1 ) {		// ?n?????????O?@??? ( EX?G?H?? ?H?? ) 
