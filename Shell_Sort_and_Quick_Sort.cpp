@@ -192,7 +192,7 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	timer2 = clock() - timer2; // get the elapse time
  	cout << "[1] ?g?????G" << timer2 << " clocks (";
  	cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
- 	WriteTimeRecords( fileName, "shellSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / 0 );
+ 	WriteTimeRecords( fileName, "shellSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / CLOCKS_PER_SEC );
 } // end shellSort
 
 void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // definition: quick sort
