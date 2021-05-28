@@ -47,7 +47,7 @@ void readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {
 	string coName, depName, stLevel;
  	char rBuf[255]; 								// input buffer for one line
  	inFile.open(fileName.c_str(), fstream::in); 	// open file to read
- 	if (inFile.is_open()) 							// unable to open file
+ 	if (!inFile.is_open()) 							// unable to open file
  		cout << endl << "### " << fileName << " does not exist! ###" << endl;
  	else {
  		while (inFile.getline(rBuf, 255, '\n')) { 	// get each input record line by line
