@@ -40,7 +40,7 @@ int main(void) {
 
 bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {   // read records from a file
 	clock_t timer;
-	std::cout << "����ɦW(601~605)�G";
+	cout << "?????W(601~605)?G";
 	cin >> fileName;
 	fstream inFile; 						// input file handle
 	string temp = fileName;
@@ -84,10 +84,10 @@ bool readRecords(vector<collegeType> &cSet, string & fileName, float & rTime ) {
  		} //end outer-while
  	}	// else
  	
- 	// timer = clock();						// start the timer
+ 	//timer = clock();						// start the timer
  	timer = clock() - timer; 	// get the elapse time
- 	std::cout << endl << "Ū�ɮɶ��G" << timer << " clocks (";
- 	std::cout << ( (float)timer ) / CLOCKS_PER_SEC << " seconds)." << endl;
+ 	cout << endl << "Ū�ɮɶ��GG" << timer << " clocks (";
+ 	cout << ( (float)timer ) / CLOCKS_PER_SEC << " seconds)." << endl;
  	rTime = ( (float)timer ) / CLOCKS_PER_SEC ;
 	inFile.close(); // close file
 	fileName = temp;
@@ -105,7 +105,7 @@ void displayAll(vector<collegeType> &cSet) { 	// output all on screen
  	for (vector<collegeType>::iterator it = cSet.begin(); it < cSet.end(); ++it) {
   		std::cout << "(" << setw(2) << ++j << ") " << setw(10) << it->cname << setw(30)
 			 << it->dname;
- 		std::cout << setw(8) << it->level << setw(6) << it->total << " students" << endl;
+ 		cout << setw(8) << it->level << setw(6) << it->total << " students" << endl;
  	} // end for
 } // end displayAll
 
@@ -114,7 +114,7 @@ void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { 
  	int j = 0;
  	fstream outFile; 								// output file handle
  	fname = "output" + fileName + fname + ".txt"; 	// output file name
- 	outFile.open(fname.c_str(), fstream::out); 		// create a new file to write
+	outFile.open(fname.c_str(), fstream::out); 		// create a new file to write
  	if (!outFile.is_open()) { 						// unable to create a file
  		std::cout << endl << "### Cannot create " << fname << " ! ###" << endl;
  		return;
@@ -125,7 +125,6 @@ void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { 
 				<<	it->dname;
  		outFile << "\t" << it->level << "\t1234567" << it->total << endl;
  	} // end for
- 	
  	outFile.close(); 	// close output file
 } // end writeRecords
 
@@ -154,10 +153,10 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
  	int len = tempS.size() + 500;
  	char show = '\0';
  	int choice = 0;
- 	std::cout << "======= Shell Sort =======\n";
- 	std::cout << "�п�ܱ��ƧǪ����(1~4)�G";
+ 	cout << "======= Shell Sort =======\n";
+ 	cout << "�п�ܱ��ƧǪ����(1~4)�G";
  	cin >> choice;
- 	std::cout << "�п�ܱƧǤ覡(���W+ ����-)�G";
+ 	cout << "�п�ܱƧǤ覡(���W+ ����-)�G";
  	cin >> show;
 	timer = clock(); // start the timer
 	int gap, i, j;
@@ -199,9 +198,9 @@ void shellSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	writeRecords(tempS, "shellSort", fileName ); 	// call: output all into a new file
 	
 	timer2 = clock() - timer2; // get the elapse time
- 	std::cout << "[1] �g�ɮɶ��G" << timer2 << " clocks (";
- 	std::cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
- 	WriteTimeRecords( fileName, "shellSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / 0 );
+ 	cout << "[1] ?g?????G" << timer2 << " clocks (";
+ 	cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
+ 	WriteTimeRecords( fileName, "shellSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / CLOCKS_PER_SEC );
 } // end shellSort
 
 void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // definition: quick sort
@@ -209,14 +208,14 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
  	clock_t timer, timer2;	
  	int choice1 = 0, choice2 = 0;
  	char show1 = '\0', show2 = '\0';
- 	std::cout << "======= Quick Sort =======\n";
- 	std::cout << "�п�ܲĤ@�����ƧǪ����(1~4)�G";
+ 	cout << "======= Quick Sort =======\n";
+ 	cout << "�п�ܲĤ@�����ƧǪ����(1~4)�G";
  	cin >> choice1;
- 	std::cout << "�п�ܲĤ@�����ƧǤ覡(���W+ ����-)�G";
+ 	cout << "�п�ܲĤ@�����ƧǤ覡(���W+ ����-)�G";
  	cin >> show1;
- 	std::cout << "�п�ܲĤG�����ƧǪ����(1~4)�G";
+ 	cout << "�п�ܲĤG�����ƧǪ����(1~4)�G";
  	cin >> choice2;
- 	std::cout << "�п�ܲĤG�����ƧǤ覡(���W+ ����-)�G";
+ 	cout << "�п�ܲĤG�����ƧǤ覡(���W+ ����-)�G";
  	cin >> show2;
  	timer = clock(); 	// start the timer	
  	
@@ -224,7 +223,7 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	if ( show1 == '-' )	{// �ƧǤ覡�� ����
 		vector<collegeType> temp(tempS);
 		for ( int i = 0; i < tempS.size(); i++ )
-			tempS[i] = temp[tempS.size() - i - 1];
+			tempS[i] = tempS[tempS.size() - i - 1];
 		// if
 	}
 	if ( choice2 == choice1 ) {		// �n�ƪ�������O�@�˪� ( EX�G�H�� �H�� ) 
@@ -338,8 +337,8 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 	writeRecords( tempS, "quickSort", fileName ); // call: output all into a new file
 	
 	timer2 = clock() - timer2; 	// get the elapse time
- 	std::cout << "[1] �g�ɮɶ��G" << timer2 << " clocks (";
- 	std::cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
+ 	cout << "[1] �g�ɮɶ��G" << timer2 << " clocks (";
+ 	cout << ((float)timer2) / CLOCKS_PER_SEC << " seconds)." << endl;
  	WriteTimeRecords( fileName, "quickSort", rTime, ((float)timer) / CLOCKS_PER_SEC, ((float)timer2) / CLOCKS_PER_SEC );
 } // end quickSort
 
@@ -406,11 +405,7 @@ void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int ch
 		else
 			left++;	
 	}	// else if
-
+	
 	QuickSortRecursive( tempS, start, left - 1, choice );
 	QuickSortRecursive( tempS, right + 1, end, choice );
 }	// QuickSortRecursive()
-
-
-
-
