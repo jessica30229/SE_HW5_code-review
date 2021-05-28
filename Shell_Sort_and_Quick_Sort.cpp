@@ -337,7 +337,7 @@ void quickSort( vector<collegeType> &aSet, string fileName, float rTime ) { // d
 
 void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int choice ) {
 	if ( start >= end )		// ??K??C????? 0 
-		return false;
+		return;
 	collegeType mid = tempS[end];	// pivot 
 	int left = start, right = end - 1;
 	while ( left < right ) {
