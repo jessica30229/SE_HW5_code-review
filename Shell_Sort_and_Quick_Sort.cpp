@@ -16,7 +16,7 @@ typedef struct cT {
 
 bool readRecords(vector<collegeType> &, string & fileName, float & rTime ); // read records from a file
 void displayAll(vector<collegeType> &); 									// output all on screen
-void writeRecords(vector<collegeType> &, string, string fileName ); 		// output all into a file
+void writeRecords(vector<collegeType> &, string, string fileName, float & rTime ); 		// output all into a file
 void shellSort(vector<collegeType> &, string fileName, float rTime ); 		// shell sort
 void quickSort(vector<collegeType> &, string fileName, float rTime ); 		// quick sort
 void QuickSortRecursive( vector<collegeType> & tempS, int start, int end, int choice );
@@ -102,11 +102,13 @@ void displayAll(vector<collegeType> &cSet) { 	// output all on screen
 } // end displayAll
 
 
-void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { // output all into a file
+void writeRecords( vector<collegeType> &aSet, string fname, string fileName, float & rTime ) { // output all into a file
  	int j = 0;
  	fstream outFile; 								// output file handle
  	fname = "output" + fileName + fname + ".txt"; 	// output file name
- 	outFile.open(fname.c_str(), fstream::out); 		// create a new file to write
+ 	clock_t timer;
+	timer = clock();
+	outFile.open(fname.c_str(), fstream::out); 		// create a new file to write
  	if (!outFile.is_open()) { 						// unable to create a file
  		cout << endl << "### Cannot create " << fname << " ! ###" << endl;
  		return;
@@ -117,11 +119,15 @@ void writeRecords( vector<collegeType> &aSet, string fname, string fileName ) { 
 				<<	it->dname;
  		outFile << "\t" << it->level << "\t1234567" << it->total << endl;
  	} // end for
- 	
+ 	timer = clock();						// start the timer
+ 	timer = clock() - timer; 	// get the elapse time
+ 	cout << endl << "?g?????G" << timer << " clocks (";
+ 	cout << ( (float)timer ) / CLOCKS_PER_SEC << " seconds)." << endl;
+ 	rTime = ( (float)timer ) / CLOCKS_PER_SEC ;
  	outFile.close(); 	// close output file
 } // end writeRecords
 
-void WriteTimeRecords( string fileName, string fname, float readTime, float runTime ) {
+void WriteTimeRecords( string fileName, string fname, float readTime, float runTime, float writeTime ) {
  	int j = 0;
  	fstream outFile; 							// output file handle
  	fname = fileName + fname + "??????.txt"; 	// output file name
